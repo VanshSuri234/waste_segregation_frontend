@@ -27,7 +27,7 @@ function App() {
     try {
       // 3. Hit the Backend
       const endpoint = file ? 'upload' : 'chat';
-      const response = await fetch(`https://waste-segregation-i160.onrender.com/${endpoint}`, {
+      const response = await fetch(`https://zealous-cristina-bdalbda-ff2eaab5.koyeb.app/${endpoint}`, {
         method: 'POST',
         body: formData,
       });
