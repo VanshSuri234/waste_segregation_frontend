@@ -27,7 +27,7 @@ function App() {
     try {
       // 3. Hit the Backend
       const endpoint = file ? 'upload' : 'chat';
-      const response = await fetch(`http://localhost:8000/${endpoint}`, {
+      const response = await fetch(`https://waste-segregation-i160.onrender.com/${endpoint}`, {
         method: 'POST',
         body: formData,
       });
