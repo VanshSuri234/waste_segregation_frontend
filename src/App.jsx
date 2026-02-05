@@ -27,7 +27,8 @@ function App() {
     try {
       // 3. Hit the Backend
       const endpoint = file ? 'upload' : 'chat';
-      const response = await fetch(`https://your-ngrok-url.ngrok-free.app/${endpoint}`, {
+      const API_BASE_URL = "https://nonphonetically-nonexistential-isadora.ngrok-free.dev";
+      const response = await fetch(`${API_BASE_URL}/${endpoint}`, {
         method: 'POST',
         headers: {
           // THIS HEADER IS MANDATORY FOR NGROK + CORS
