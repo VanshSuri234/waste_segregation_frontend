@@ -27,7 +27,7 @@ function App() {
     try {
       // 3. Hit the Backend
       const endpoint = file ? 'upload' : 'chat';
-      const response = await fetch(`https://zealous-cristina-bdalbda-ff2eaab5.koyeb.app/${endpoint}`, {
+      const response = await fetch(`https://your-ngrok-url.ngrok-free.app/${endpoint}`, {
         method: 'POST',
         body: formData,
       });
