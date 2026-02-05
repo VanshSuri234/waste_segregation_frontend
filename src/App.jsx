@@ -29,6 +29,10 @@ function App() {
       const endpoint = file ? 'upload' : 'chat';
       const response = await fetch(`https://your-ngrok-url.ngrok-free.app/${endpoint}`, {
         method: 'POST',
+        headers: {
+          // THIS HEADER IS MANDATORY FOR NGROK + CORS
+          "ngrok-skip-browser-warning": "69420", 
+        },
         body: formData,
       });
   
