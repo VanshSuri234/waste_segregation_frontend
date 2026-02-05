@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Send, Paperclip, Recycle, User, Bot } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import ChatInput from './components/ChatInput';
+import remarkGfm from 'remark-gfm';
 
 function App() {
   const [messages, setMessages] = useState([
@@ -28,6 +29,7 @@ function App() {
       // 3. Hit the Backend
       const endpoint = file ? 'upload' : 'chat';
       const API_BASE_URL = "https://nonphonetically-nonexistential-isadora.ngrok-free.dev";
+      // const API_BASE_URL = "http://localhost:8000"
       const response = await fetch(`${API_BASE_URL}/${endpoint}`, {
         method: 'POST',
         headers: {
@@ -91,8 +93,8 @@ function App() {
                     : 'bg-white text-slate-800 rounded-tl-none border border-slate-100'
                 }`}>
                   {/* Updated to use ReactMarkdown for better formatting */}
-                  <div className="text-sm leading-relaxed prose prose-slate max-w-none">
-                    <ReactMarkdown>{m.text}</ReactMarkdown>
+                  <div className="text-sm leading-relaxed prose prose-slate max-w-none prose-emerald">
+                    <ReactMarkdown remarkPlugins={[remarkGfm]} >{m.text}</ReactMarkdown>
                   </div>
                   
                   {m.file && (
